@@ -1,0 +1,126 @@
+<view class="container report-container">
+  <block wx:if="{{loading}}">
+    <view class="loading">
+      <view class="loading-spinner"></view>
+      <text>正在生成学习报告...</text>
+    </view>
+  </block>
+
+  <block wx:elif="{{report}}">
+    <!-- 顶部总分展示 -->
+    <view class="score-section card">
+      <view class="score-circle">
+        <view class="score-number">{{report.totalScore}}</view>
+        <view class="score-label">总分</view>
+      </view>
+      <view class="encourage-text">{{report.encouragement}}</view>
+    </view>
+
+    <!-- 发音评分卡片 -->
+    <view class="score-card card">
+      <view class="card-header">
+        <view class="card-icon">🎯</view>
+        <view class="card-title">发音评分</view>
+        <view class="card-score {{report.pronunciationScore >= 80 ? 'score-good' : 'score-need-improve'}}">
+          {{report.pronunciationScore}}分
+        </view>
+      </view>
+      <view class="score-bar">
+        <view class="score-fill" style="width: {{report.pronunciationScore}}%; background: {{report.pronunciationScore >= 80 ? '#4CAF50' : '#FF9800'}}"></view>
+      </view>
+      <view class="card-detail" wx:if="{{report.pronunciationFeedback}}">
+        <text>{{report.pronunciationFeedback}}</text>
+      </view>
+    </view>
+
+    <!-- 语法评分卡片 -->
+    <view class="score-card card">
+      <view class="card-header">
+        <view class="card-icon">📝</view>
+        <view class="card-title">语法评分</view>
+        <view class="card-score {{report.grammarScore >= 80 ? 'score-good' : 'score-need-improve'}}">
+          {{report.grammarScore}}分
+        </view>
+      </view>
+      <view class="score-bar">
+        <view class="score-fill" style="width: {{report.grammarScore}}%; background: {{report.grammarScore >= 80 ? '#4CAF50' : '#FF9800'}}"></view>
+      </view>
+      <view class="card-detail" wx:if="{{report.grammarFeedback}}">
+        <text>{{report.grammarFeedback}}</text>
+      </view>
+    </view>
+
+    <!-- 词汇使用卡片 -->
+    <view class="score-card card">
+      <view class="card-header">
+        <view class="card-icon">📚</view>
+        <view class="card-title">词汇使用</view>
+        <view class="card-score {{report.vocabularyScore >= 80 ? 'score-good' : 'score-need-improve'}}">
+          {{report.vocabularyScore}}分
+        </view>
+      </view>
+      
+      <!-- 目标词汇使用情况 -->
+      <view class="vocabulary-section" wx:if="{{report.targetWords}}">
+        <view class="vocab-title">目标词汇使用情况</view>
+        <view class="vocab-list">
+          <view class="vocab-item" wx:for="{{report.targetWords}}" wx:key="word">
+            <view class="vocab-word">{{item.word}}</view>
+            <view class="vocab-status {{item.used ? 'used' : 'not-used'}}">
+              {{item.used ? '✓ 已使用' : '○ 未使用'}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 词汇使用率进度条 -->
+      <view class="vocab-rate" wx:if="{{report.vocabularyUsageRate !== undefined}}">
+        <view class="vocab-rate-label">词汇使用率: {{report.vocabularyUsageRate}}%</view>
+        <view class="score-bar">
+          <view class="score-fill" style="width: {{report.vocabularyUsageRate}}%"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 优点列表 -->
+    <view class="advices-card card" wx:if="{{report.strengths && report.strengths.length > 0}}">
+      <view class="card-header">
+        <view class="card-icon">👍</view>
+        <view class="card-title">你的优点</view>
+      </view>
+      <view class="list-section">
+        <view class="list-item strength-item" wx:for="{{report.strengths}}" wx:key="index">
+          <view class="item-icon">⭐</view>
+          <view class="item-text">{{item}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 改进建议列表 -->
+    <view class="advices-card card" wx:if="{{report.suggestions && report.suggestions.length > 0}}">
+      <view class="card-header">
+        <view class="card-icon">💡</view>
+        <view class="card-title">改进建议</view>
+      </view>
+      <view class="list-section">
+        <view class="list-item suggestion-item" wx:for="{{report.suggestions}}" wx:key="index">
+          <view class="item-icon">📌</view>
+          <view class="item-text">{{item}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="action-buttons">
+      <button class="btn btn-secondary btn-large" bindtap="onRetry">🔄 再来一次</button>
+      <button class="btn btn-primary btn-large" bindtap="onGoHome">🏠 返回首页</button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="empty">
+      <view class="empty-icon">📄</view>
+      <text>暂无学习报告</text>
+    </view>
+  </block>
+</view>

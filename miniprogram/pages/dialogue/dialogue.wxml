@@ -1,0 +1,92 @@
+<view class="dialogue-container">
+  <!-- 顶部情景信息栏 -->
+  <view class="scenario-header">
+    <view class="scenario-info">
+      <view class="scenario-name">{{scenarioName}}</view>
+      <view class="scenario-detail">{{grade}}年级 · Unit {{unit}}</view>
+    </view>
+    <view class="progress-info">
+      <view class="progress-text">{{currentTurn}}/{{maxTurns}}</view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{(currentTurn / maxTurns) * 100}}%"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 聊天消息列表 -->
+  <scroll-view 
+    class="message-list" 
+    scroll-y 
+    scroll-into-view="{{scrollToId}}"
+    scroll-with-animation
+  >
+    <block wx:for="{{messages}}" wx:key="id">
+      <view id="msg-{{index}}" class="message-item {{item.isAi ? 'message-ai' : 'message-user'}}">
+        <view class="message-avatar">
+          <text>{{item.isAi ? '🤖' : '👦'}}</text>
+        </view>
+        <view class="message-bubble {{item.isAi ? 'bubble-ai' : 'bubble-user'}}">
+          <view class="message-text">{{item.text}}</view>
+          <view class="message-translation" wx:if="{{item.translation}}">{{item.translation}}</view>
+          <view class="message-actions" wx:if="{{item.isAi && item.audioUrl}}">
+            <view class="play-btn" bindtap="onPlayAudio" data-url="{{item.audioUrl}}">
+              <text>🔊 播放语音</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- AI思考中 -->
+    <view class="message-item message-ai" wx:if="{{isAiThinking}}">
+      <view class="message-avatar">
+        <text>🤖</text>
+      </view>
+      <view class="message-bubble bubble-ai bubble-thinking">
+        <view class="thinking-dots">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </view>
+        <text class="thinking-text">AI正在思考...</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部操作区 -->
+  <view class="action-area safe-area-bottom">
+    <!-- 录音按钮 -->
+    <view class="record-section">
+      <view 
+        class="record-btn {{isRecording ? 'recording' : ''}}"
+        bindtouchstart="onTouchStart"
+        bindtouchend="onTouchEnd"
+        bindtouchcancel="onTouchEnd"
+      >
+        <view class="record-icon">
+          <text wx:if="{{!isRecording}}">🎤</text>
+          <text wx:else>⏹️</text>
+        </view>
+        <text class="record-text">{{isRecording ? '松开结束' : '按住说话'}}</text>
+      </view>
+    </view>
+
+    <!-- 文字输入区 -->
+    <view class="input-section">
+      <input 
+        class="text-input" 
+        placeholder="或输入文字..." 
+        value="{{inputText}}"
+        bindinput="onInputChange"
+        confirm-type="send"
+        bindconfirm="onSendText"
+      />
+      <button class="send-btn" bindtap="onSendText" disabled="{{!inputText}}">发送</button>
+    </view>
+
+    <!-- 结束对话按钮 -->
+    <view class="end-section">
+      <button class="end-btn" bindtap="onEndDialogue">结束对话</button>
+    </view>
+  </view>
+</view>

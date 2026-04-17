@@ -1,0 +1,114 @@
+2026-04-18 01:49:43,847 [INFO] tests.conftest: Loading test data from: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\fixtures\test-data.json
+2026-04-18 01:49:43,847 [INFO] tests.conftest: Test data loaded successfully
+2026-04-18 01:49:43,848 [INFO] tests.conftest: Starting Playwright...
+2026-04-18 01:49:44,346 [INFO] tests.conftest: Launching browser: chromium
+2026-04-18 01:49:48,311 [INFO] tests.conftest: Browser launched: chromium
+2026-04-18 01:49:48,382 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:49:48,382 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:04,282 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:04,282 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:20,092 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:20,092 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:25,592 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:50:25,595 [INFO] tests.test_login: === TC-LOGIN-003: 有效会员名登录 ===
+2026-04-18 01:50:25,596 [INFO] pages.login_page: Entering account: tes***
+2026-04-18 01:50:36,075 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginUsername_test_login_003_valid_username_login[username]_20260418_015035_795334.png
+2026-04-18 01:50:36,099 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginUsername_test_login_003_valid_username_login[username]_20260418_015035_795334.html
+2026-04-18 01:50:36,170 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:36,170 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:52,040 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:52,040 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:50:55,127 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:50:55,129 [INFO] tests.test_login: === TC-LOGIN-005: 密码为空登录 ===
+2026-04-18 01:50:55,130 [INFO] pages.login_page: Entering account: 138***
+2026-04-18 01:51:05,543 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginEmptyPassword_test_login_005_empty_password_20260418_015105_318210.png
+2026-04-18 01:51:05,554 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginEmptyPassword_test_login_005_empty_password_20260418_015105_318210.html
+2026-04-18 01:51:05,629 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:05,630 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:08,373 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:51:08,375 [INFO] tests.test_login: === TC-LOGIN-006: 错误密码登录 ===
+2026-04-18 01:51:08,376 [INFO] pages.login_page: Entering account: 138***
+2026-04-18 01:51:18,803 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginWrongPassword_test_login_006_wrong_password_20260418_015118_574775.png
+2026-04-18 01:51:18,827 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginWrongPassword_test_login_006_wrong_password_20260418_015118_574775.html
+2026-04-18 01:51:18,901 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:18,902 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:34,750 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:34,750 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:40,376 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:51:40,377 [INFO] tests.test_login: === TC-LOGIN-008: 登录页面元素验证 ===
+2026-04-18 01:51:40,383 [INFO] tests.test_login: Page title: 阿里云登录页
+2026-04-18 01:51:40,641 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginPageElements_test_login_008_page_elements_20260418_015140_410951.png
+2026-04-18 01:51:40,652 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginPageElements_test_login_008_page_elements_20260418_015140_410951.html
+2026-04-18 01:51:40,729 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:40,729 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:44,722 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:51:44,723 [INFO] tests.test_login: === TC-LOGIN-009: 切换到短信登录 ===
+2026-04-18 01:51:44,724 [INFO] pages.login_page: Switching to SMS login mode
+2026-04-18 01:51:55,137 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_to_sms_login_20260418_015154_914087.png
+2026-04-18 01:51:55,170 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_to_sms_login_20260418_015154_914087.html
+2026-04-18 01:51:55,241 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:55,241 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:51:58,004 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:51:58,005 [INFO] tests.test_login: === TC-LOGIN-010: 切换到扫码登录 ===
+2026-04-18 01:51:58,006 [INFO] pages.login_page: Switching to QR code login mode
+2026-04-18 01:52:08,401 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_to_qr_login_20260418_015208_181159.png
+2026-04-18 01:52:08,412 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_to_qr_login_20260418_015208_181159.html
+2026-04-18 01:52:08,485 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:52:08,486 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:52:11,406 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:52:11,407 [INFO] tests.test_login: === TC-LOGIN-011: 切换回密码登录 ===
+2026-04-18 01:52:11,407 [INFO] pages.login_page: Switching to SMS login mode
+2026-04-18 01:52:21,858 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_back_to_password_login_20260418_015221_607723.png
+2026-04-18 01:52:21,870 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_login.py_TestLoginModeSwitch_test_switch_back_to_password_login_20260418_015221_607723.html
+2026-04-18 01:52:21,947 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:52:21,947 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:52:24,541 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:52:24,542 [INFO] tests.test_redirect: === TC-REDIRECT-001: 登录成功默认跳转 ===
+2026-04-18 01:52:24,543 [INFO] tests.test_redirect: Before login URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:52:24,544 [INFO] pages.login_page: Entering account: 138***
+2026-04-18 01:52:34,974 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_001_default_redirect_after_login_20260418_015234_719145.png
+2026-04-18 01:52:34,986 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_001_default_redirect_after_login_20260418_015234_719145.html
+2026-04-18 01:52:35,057 [INFO] tests.test_redirect: === TC-REDIRECT-002: 带 return_url 参数登录跳转 ===
+2026-04-18 01:52:35,057 [INFO] tests.test_redirect: Navigating to login with return_url: https://account.aliyun.com/login/login.htm?oauth_callback=https://www.aliyun.com/product/ecs
+2026-04-18 01:52:38,357 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm?oauth_callback=https://www.aliyun.com/product/ecs
+2026-04-18 01:52:38,358 [INFO] pages.login_page: Entering account: 138***
+2026-04-18 01:52:48,736 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_002_redirect_with_return_url_20260418_015248_514074.png
+2026-04-18 01:52:48,747 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_002_redirect_with_return_url_20260418_015248_514074.html
+2026-04-18 01:52:48,827 [INFO] tests.test_redirect: === TC-REDIRECT-003: 无效 return_url 跳转 ===
+2026-04-18 01:52:48,827 [INFO] tests.test_redirect: Testing with malicious return_url: https://account.aliyun.com/login/login.htm?oauth_callback=https://evil.com/phishing
+2026-04-18 01:52:51,552 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm?oauth_callback=https://evil.com/phishing
+2026-04-18 01:52:51,552 [INFO] pages.login_page: Entering account: 138***
+2026-04-18 01:53:01,934 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_003_invalid_return_url_20260418_015301_710000.png
+2026-04-18 01:53:01,945 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginRedirect_test_redirect_003_invalid_return_url_20260418_015301_710000.html
+2026-04-18 01:53:02,019 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:02,020 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:17,908 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:17,908 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:20,527 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:53:20,530 [INFO] tests.test_redirect: === TC-REDIRECT-005: 登录失败后保留账号 ===
+2026-04-18 01:53:20,531 [INFO] pages.login_page: Entering account: tes***
+2026-04-18 01:53:30,980 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginFailedRedirect_test_redirect_005_preserve_account_after_failed_login_20260418_015330_760343.png
+2026-04-18 01:53:30,991 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_redirect.py_TestLoginFailedRedirect_test_redirect_005_preserve_account_after_failed_login_20260418_015330_760343.html
+2026-04-18 01:53:31,065 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:31,065 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:46,893 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:46,893 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:53:52,378 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:53:52,381 [INFO] tests.test_security: === TC-SECURITY-001~003: SQL注入测试 (账号) - ' OR 1=1 -- ===
+2026-04-18 01:53:52,382 [INFO] pages.login_page: Entering account: ' O***
+2026-04-18 01:54:02,779 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_security.py_TestSQLInjection_test_security_001_sql_injection_in_account[' OR 1=1 --]_20260418_015402_561182.png
+2026-04-18 01:54:02,790 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_security.py_TestSQLInjection_test_security_001_sql_injection_in_account[' OR 1=1 --]_20260418_015402_561182.html
+2026-04-18 01:54:02,860 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:02,861 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:08,477 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:54:08,480 [INFO] tests.test_security: === TC-SECURITY-001~003: SQL注入测试 (账号) - admin' -- ===
+2026-04-18 01:54:08,482 [INFO] pages.login_page: Entering account: adm***
+2026-04-18 01:54:18,952 [INFO] tests.conftest: Screenshot saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_security.py_TestSQLInjection_test_security_001_sql_injection_in_account[admin' --]_20260418_015418_718201.png
+2026-04-18 01:54:18,964 [INFO] tests.conftest: Page HTML saved: D:\workspace_about_ai\learning_english_opencode\test-artifacts\aliyun-login-test\03-automation\v1\screenshots\tests_test_security.py_TestSQLInjection_test_security_001_sql_injection_in_account[admin' --]_20260418_015418_718201.html
+2026-04-18 01:54:19,038 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:19,038 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:34,854 [INFO] pages.login_page: LoginPage initialized with URL: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:34,854 [INFO] pages.login_page: Navigating to login page: https://account.aliyun.com/login/login.htm
+2026-04-18 01:54:38,807 [INFO] pages.login_page: Login page loaded successfully
+2026-04-18 01:54:38,808 [INFO] tests.test_security: === TC-SECURITY-004~005: 破坏性SQL注入测试 - ' UNION SELECT * FROM users -- ===
+2026-04-18 01:54:38,808 [INFO] pages.login_page: Entering account: ' U***

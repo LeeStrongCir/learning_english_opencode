@@ -1,0 +1,83 @@
+<view class="container">
+  <!-- 顶部标题区域 -->
+  <view class="header">
+    <view class="title">📚 选择学习内容</view>
+    <view class="subtitle">选择年级和单元，开始情景对话练习</view>
+  </view>
+
+  <!-- 年级选择器 -->
+  <view class="selector-card card">
+    <view class="selector-title">年级选择</view>
+    <picker 
+      mode="selector" 
+      range="{{grades}}" 
+      value="{{gradeIndex}}"
+      bindchange="onGradeChange"
+    >
+      <view class="picker-display">
+        <text class="picker-text">{{selectedGrade}}年级</text>
+        <text class="picker-arrow">▼</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 学期选择 -->
+  <view class="selector-card card">
+    <view class="selector-title">学期选择</view>
+    <picker 
+      mode="selector" 
+      range="{{semesterLabels}}" 
+      value="{{semesterIndex}}"
+      bindchange="onSemesterChange"
+    >
+      <view class="picker-display">
+        <text class="picker-text">{{selectedSemester === 'upper' ? '上册' : '下册'}}</text>
+        <text class="picker-arrow">▼</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 单元列表 -->
+  <view class="units-section">
+    <view class="section-title">单元列表</view>
+    
+    <block wx:if="{{loading}}">
+      <view class="loading">
+        <view class="loading-spinner"></view>
+        <text>加载中...</text>
+      </view>
+    </block>
+
+    <block wx:elif="{{units.length === 0}}">
+      <view class="empty">
+        <view class="empty-icon">📭</view>
+        <text>暂无可用单元</text>
+      </view>
+    </block>
+
+    <block wx:else>
+      <view 
+        class="unit-card card" 
+        wx:for="{{units}}" 
+        wx:key="id"
+        data-unit="{{item.unit}}"
+        data-lesson="{{item.lesson}}"
+        bindtap="onUnitTap"
+      >
+        <view class="unit-header">
+          <view class="unit-number">Unit {{item.unit}}</view>
+          <view class="unit-arrow">→</view>
+        </view>
+        <view class="unit-title">{{item.title}}</view>
+        <view class="unit-title-cn">{{item.titleCn}}</view>
+        <view class="unit-footer">
+          <view class="unit-scenarios">
+            <text wx:for="{{item.scenarios}}" wx:key="index" wx:for-item="scenario" class="scenario-tag">
+              {{scenario}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

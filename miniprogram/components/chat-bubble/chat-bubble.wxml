@@ -1,0 +1,11 @@
+<view class="chat-bubble {{isAi ? 'bubble-ai' : 'bubble-user'}}">
+  <view class="bubble-content">
+    <text class="bubble-text">{{message.text}}</text>
+    <text class="bubble-translation" wx:if="{{message.translation}}">{{message.translation}}</text>
+  </view>
+  <view class="bubble-actions" wx:if="{{isAi && message.audioUrl}}">
+    <view class="play-btn" bindtap="onPlayTap">
+      <text>🔊 播放</text>
+    </view>
+  </view>
+</view>

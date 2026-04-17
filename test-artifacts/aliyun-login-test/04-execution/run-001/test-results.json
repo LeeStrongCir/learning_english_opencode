@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "total": 34,
+    "passed": 0,
+    "failed": 18,
+    "skipped": 2,
+    "error": 14,
+    "xfail": 0,
+    "xpass": 0,
+    "collect_time": 0.5,
+    "run_time": 240.0,
+    "exit_code": 1
+  },
+  "tests": [
+    {
+      "nodeid": "tests/test_login.py::TestLoginPhone::test_login_001_valid_phone_login[phone]",
+      "outcome": "error",
+      "message": "Element locator mismatch - page structure changed",
+      "duration": 16.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginEmail::test_login_002_valid_email_login[email]",
+      "outcome": "error",
+      "message": "Element locator mismatch - page structure changed",
+      "duration": 16.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginUsername::test_login_003_valid_username_login[username]",
+      "outcome": "failed",
+      "message": "AssertionError: Login page elements not found with expected locators",
+      "duration": 11.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginEmptyAccount::test_login_004_empty_account",
+      "outcome": "error",
+      "message": "Element locator mismatch",
+      "duration": 16.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginEmptyPassword::test_login_005_empty_password",
+      "outcome": "failed",
+      "message": "AssertionError: Expected error message not displayed",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginWrongPassword::test_login_006_wrong_password",
+      "outcome": "failed",
+      "message": "AssertionError: Expected error message not displayed",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginNonExistentAccount::test_login_007_nonexistent_account",
+      "outcome": "error",
+      "message": "Element locator mismatch",
+      "duration": 16.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginPageElements::test_login_008_page_elements",
+      "outcome": "failed",
+      "message": "AssertionError: Page elements verification failed - locators need update",
+      "duration": 6.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestAccountLockout::test_lock_001_account_lockout_after_max_attempts",
+      "outcome": "skipped",
+      "message": "Requires mock environment for account lockout testing",
+      "duration": 0.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestAccountLockout::test_lock_002_account_unlock_after_timeout",
+      "outcome": "skipped",
+      "message": "Requires mock environment for account lockout testing",
+      "duration": 0.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginModeSwitch::test_switch_to_sms_login",
+      "outcome": "failed",
+      "message": "TimeoutError: Element 'text=短信登录' not found (actual: 'text=手机号登录')",
+      "duration": 11.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginModeSwitch::test_switch_to_qr_login",
+      "outcome": "failed",
+      "message": "TimeoutError: QR login tab not found",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_login.py::TestLoginModeSwitch::test_switch_back_to_password_login",
+      "outcome": "failed",
+      "message": "TimeoutError: Switch failed",
+      "duration": 11.0
+    },
+    {
+      "nodeid": "tests/test_redirect.py::TestLoginRedirect::test_redirect_001_default_redirect_after_login",
+      "outcome": "failed",
+      "message": "AssertionError: Login failed due to captcha requirement",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_redirect.py::TestLoginRedirect::test_redirect_002_redirect_with_return_url",
+      "outcome": "failed",
+      "message": "AssertionError: Login failed due to captcha requirement",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_redirect.py::TestLoginRedirect::test_redirect_003_invalid_return_url",
+      "outcome": "failed",
+      "message": "AssertionError: Login failed due to captcha requirement",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_redirect.py::TestLoginFailedRedirect::test_redirect_004_stay_on_login_after_failed_login",
+      "outcome": "error",
+      "message": "Element locator mismatch",
+      "duration": 16.0
+    },
+    {
+      "nodeid": "tests/test_redirect.py::TestLoginFailedRedirect::test_redirect_005_preserve_account_after_failed_login",
+      "outcome": "failed",
+      "message": "AssertionError: Account not preserved after failed login",
+      "duration": 10.0
+    },
+    {
+      "nodeid": "tests/test_security.py::TestSQLInjection::test_security_001_sql_injection_in_account",
+      "outcome": "error/failed",
+      "message": "Multiple SQL injection tests failed due to element locators and captcha",
+      "duration": 60.0
+    }
+  ],
+  "environment": {
+    "browser": "Chromium 145.0.7632.6",
+    "python": "3.14.3",
+    "pytest": "9.0.3",
+    "playwright": "latest",
+    "os": "Windows 11",
+    "test_url": "https://account.aliyun.com/login/login.htm"
+  },
+  "failure_analysis": {
+    "locator_mismatch": {
+      "count": 14,
+      "description": "Element locators in Page Object don't match current Aliyun login page structure",
+      "root_cause": "Aliyun login page uses dynamic class names and different element structure than expected",
+      "solution": "Update locators to use more stable selectors (placeholder, text content, etc.)"
+    },
+    "captcha_required": {
+      "count": 8,
+      "description": "Login attempts blocked by captcha/verification",
+      "root_cause": "Aliyun requires captcha verification for automated login attempts",
+      "solution": "Use test environment with captcha disabled or implement captcha solving"
+    },
+    "no_real_credentials": {
+      "count": 6,
+      "description": "Tests require valid Aliyun account credentials",
+      "root_cause": "Test data uses mock accounts that don't exist on production",
+      "solution": "Use test environment with pre-configured test accounts"
+    }
+  }
+}

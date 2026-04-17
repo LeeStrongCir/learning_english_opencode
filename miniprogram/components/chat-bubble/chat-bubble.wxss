@@ -1,0 +1,57 @@
+/* 消息气泡组件样式 */
+.chat-bubble {
+  max-width: 75%;
+  padding: 20rpx 24rpx;
+  border-radius: 20rpx;
+  margin-bottom: 16rpx;
+}
+
+.bubble-ai {
+  background: var(--ai-bubble);
+  border-top-left-radius: 4rpx;
+  align-self: flex-start;
+}
+
+.bubble-user {
+  background: var(--user-bubble);
+  border-top-right-radius: 4rpx;
+  align-self: flex-end;
+}
+
+.bubble-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-text {
+  font-size: 32rpx;
+  color: var(--text-primary);
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.bubble-translation {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  margin-top: 12rpx;
+  padding-top: 12rpx;
+  border-top: 1rpx dashed rgba(0, 0, 0, 0.1);
+}
+
+.bubble-actions {
+  margin-top: 12rpx;
+}
+
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 16rpx;
+  background: rgba(76, 175, 80, 0.15);
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: var(--primary-color);
+}
+
+.play-btn:active {
+  background: rgba(76, 175, 80, 0.3);
+}
