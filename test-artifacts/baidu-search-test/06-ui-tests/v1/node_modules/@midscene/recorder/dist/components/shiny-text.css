@@ -1,0 +1,73 @@
+.shiny-text {
+  color: #0000;
+  letter-spacing: .5px;
+  text-shadow: 0 1px 2px #0000000d;
+  background-image: linear-gradient(45deg, #2b83ff, #6a11cb, #2575fc, #4481eb);
+  background-size: 300%;
+  background-clip: text;
+  font-weight: 600;
+  animation: 8s infinite textGradient;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-text:after {
+  content: "";
+  width: 120%;
+  height: 120%;
+  animation: shine var(--animation-duration, 5s) cubic-bezier(.25, .1, .25, 1) infinite;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #fff0 0%, #ffffff1a 10%, #fff9 50%, #ffffff1a 90%, #fff0 100%);
+  position: absolute;
+  top: -10%;
+  left: -150%;
+  transform: skewX(-20deg)translateY(0);
+}
+
+.shiny-text.disabled {
+  background: #2b83ff;
+  background-clip: text;
+  animation: none;
+}
+
+.shiny-text.disabled:after {
+  animation: none;
+  display: none;
+}
+
+@keyframes shine {
+  0% {
+    opacity: .7;
+    left: -150%;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .7;
+    left: 250%;
+  }
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+

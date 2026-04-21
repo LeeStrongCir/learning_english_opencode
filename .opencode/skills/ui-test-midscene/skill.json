@@ -1,0 +1,24 @@
+{
+  "name": "ui-test-midscene",
+  "version": "0.1.0",
+  "description": "基于 Midscene.js 的 AI 视觉驱动 UI 自动化测试",
+  "author": "test-team",
+  "license": "MIT",
+  "keywords": [
+    "ui-test",
+    "midscene",
+    "automation",
+    "playwright",
+    "ai-testing"
+  ],
+  "dependencies": {
+    "@midscene/web": "^1.0.0",
+    "@midscene/playwright": "^1.0.0",
+    "@playwright/test": "^1.50.0"
+  },
+  "scripts": {
+    "init": "node scripts/init-test.js",
+    "run": "node scripts/run-test.js",
+    "version-check": "python3 scripts/version_checker.py"
+  }
+}

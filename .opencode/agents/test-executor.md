@@ -1,5 +1,5 @@
 ---
-name: test-exxecutor
+name: test-executor
 description: 测试执行专家，负责执行自动化测试、记录结果、提交缺陷。
 mode: subagent
 tools: 

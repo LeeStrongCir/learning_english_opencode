@@ -1,0 +1,31 @@
+{
+  "name": "baidu-alibaba-search-ui-tests",
+  "version": "1.0.0",
+  "description": "UI 自动化测试 - 百度搜索阿里巴巴并进入官网",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:report": "npx playwright show-report",
+    "install:browsers": "npx playwright install chromium"
+  },
+  "keywords": [
+    "playwright",
+    "midscene",
+    "ui-test",
+    "baidu",
+    "alibaba"
+  ],
+  "author": "test-automation",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@midscene/web": "^0.25.0",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
