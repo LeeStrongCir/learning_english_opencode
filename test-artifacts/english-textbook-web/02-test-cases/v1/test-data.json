@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "project": "english-textbook-web",
+    "version": "v1.0",
+    "created_date": "2026-04-18",
+    "designer": "test-designer"
+  },
+  "test_users": {
+    "target_audience": {
+      "description": "小学生（6-12岁）、家长、教师",
+      "age_range": "6-12",
+      "font_size_min": "16px",
+      "color_contrast_min": "4.5:1"
+    }
+  },
+  "test_data": {
+    "grades": ["三年级", "四年级", "五年级", "六年级"],
+    "semesters": ["上册", "下册"],
+    "units_per_semester": 6,
+    "content_types": ["重点词汇", "重点句型", "情景对话"]
+  },
+  "boundary_test_data": {
+    "empty_unit": {
+      "grade": "三年级",
+      "semester": "上册",
+      "unit": "Unit 1",
+      "vocabulary": [],
+      "sentences": [],
+      "dialogues": []
+    },
+    "special_characters": {
+      "grade": "三年级",
+      "semester": "上册",
+      "unit": "Unit 2",
+      "vocabulary": [
+        {"en": "hello & welcome", "zh": "你好 & 欢迎"},
+        {"en": "it's <great>", "zh": "这很<棒>"},
+        {"en": "say \"hi\"", "zh": "说\"你好\""}
+      ],
+      "sentences": [
+        {"en": "What's your name?", "zh": "你叫什么名字？"},
+        {"en": "I'm 10 years old.", "zh": "我 10 岁了。"}
+      ],
+      "dialogues": [
+        {"role": "A", "text": "Hello! & Welcome!"},
+        {"role": "B", "text": "Hi! It's <great> to see you!"}
+      ]
+    },
+    "long_text": {
+      "grade": "三年级",
+      "semester": "上册",
+      "unit": "Unit 3",
+      "vocabulary": [
+        {
+          "en": "extraordinarily",
+          "zh": "这是一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的中文释义，用于测试超长文本的显示效果"
+        }
+      ],
+      "sentences": [
+        {
+          "en": "This is an extraordinarily long sentence that is designed to test how the system handles very long text content without breaking the layout or causing overflow issues.",
+          "zh": "这是一个非常长的句子，用于测试系统如何处理超长文本内容而不破坏布局或导致溢出问题。"
+        }
+      ],
+      "dialogues": [
+        {
+          "role": "Teacher",
+          "text": "This is a very long dialogue line that contains a lot of text to test the display capabilities of the system. It should wrap properly and not overflow the container."
+        }
+      ]
+    }
+  },
+  "deep_url_test": {
+    "grade_3_unit_1": "/grade/3/semester/1/unit/1",
+    "grade_6_unit_6": "/grade/6/semester/2/unit/6"
+  },
+  "expected_results": {
+    "TC001": {
+      "load_time_max": "2s",
+      "grade_cards_count": 4,
+      "grade_cards": ["三年级", "四年级", "五年级", "六年级"]
+    },
+    "TC012": {
+      "vocabulary_count_match": true,
+      "format": "英文 + 中文释义"
+    },
+    "TC014": {
+      "sentences_count_match": true,
+      "format": "英文句子 + 中文翻译"
+    },
+    "TC016": {
+      "dialogues_complete": true,
+      "roles_clear": true
+    },
+    "TC019": {
+      "breadcrumb_format": "首页 > {年级} > {册次} > {单元}"
+    },
+    "TC029": {
+      "first_screen_load_max": "2s",
+      "total_resource_size_max": "500KB"
+    },
+    "TC030": {
+      "page_switch_max": "500ms"
+    },
+    "TC034": {
+      "layout": "single-column",
+      "horizontal_scroll": false
+    },
+    "TC049": {
+      "contrast_ratio_min": "4.5:1"
+    },
+    "TC050": {
+      "page_crash": false,
+      "empty_state_message": "暂无内容"
+    },
+    "TC051": {
+      "special_chars_rendered": true,
+      "xss_vulnerability": false
+    },
+    "TC052": {
+      "text_overflow": false,
+      "layout_broken": false
+    }
+  },
+  "browser_test_matrix": {
+    "chrome": {"version": "90+", "os": ["Windows", "macOS"], "priority": "P0"},
+    "firefox": {"version": "88+", "os": ["Windows", "macOS"], "priority": "P1"},
+    "safari": {"version": "14+", "os": ["macOS", "iOS"], "priority": "P0"},
+    "edge": {"version": "90+", "os": ["Windows"], "priority": "P1"}
+  },
+  "responsive_test_matrix": {
+    "mobile_small": {"width": 320, "height": 568, "layout": "single-column", "priority": "P0"},
+    "mobile_standard": {"width": 375, "height": 667, "layout": "single-column", "priority": "P0"},
+    "tablet": {"width": 768, "height": 1024, "layout": "two-column", "priority": "P1"},
+    "desktop_small": {"width": 1024, "height": 768, "layout": "multi-column", "priority": "P0"},
+    "desktop_standard": {"width": 1366, "height": 768, "layout": "multi-column", "priority": "P0"},
+    "desktop_large": {"width": 1920, "height": 1080, "layout": "multi-column", "priority": "P1"}
+  }
+}

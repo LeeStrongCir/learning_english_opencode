@@ -1,0 +1,78 @@
+{
+  "base_url": "http://localhost:8080",
+  "grades": [
+    {"id": "g3", "name": "三年级", "emoji": "🌱"},
+    {"id": "g4", "name": "四年级", "emoji": "🌿"},
+    {"id": "g5", "name": "五年级", "emoji": "🌳"},
+    {"id": "g6", "name": "六年级", "emoji": "🌲"}
+  ],
+  "volumes": [
+    {"id": "v1", "name": "上册", "emoji": "📗"},
+    {"id": "v2", "name": "下册", "emoji": "📕"}
+  ],
+  "test_cases": {
+    "full_navigation_g3": {
+      "grade_id": "g3",
+      "grade_name": "三年级",
+      "volume_id": "v1",
+      "volume_name": "上册",
+      "unit_id": "u1",
+      "unit_name": "Unit 1 Hello!"
+    },
+    "full_navigation_g6": {
+      "grade_id": "g6",
+      "grade_name": "六年级",
+      "volume_id": "v2",
+      "volume_name": "下册",
+      "unit_id": "u6",
+      "unit_name": "Unit 6 My summer holiday"
+    }
+  },
+  "expected_data": {
+    "g3_v1_u1": {
+      "words": [
+        {"en": "hello", "cn": "你好"},
+        {"en": "hi", "cn": "嗨"},
+        {"en": "I", "cn": "我"},
+        {"en": "am", "cn": "是"},
+        {"en": "goodbye", "cn": "再见"},
+        {"en": "bye", "cn": "拜拜"}
+      ],
+      "sentences": [
+        {"en": "Hello, I'm Mike.", "cn": "你好，我是迈克。"},
+        {"en": "Hi, I'm Sarah.", "cn": "嗨，我是萨拉。"},
+        {"en": "Goodbye!", "cn": "再见！"}
+      ],
+      "dialogues": [
+        {"speaker": "A", "en": "Hello, I'm Wu Yifan.", "cn": "你好，我是吴一凡。"},
+        {"speaker": "B", "en": "Hi, I'm Sarah.", "cn": "嗨，我是萨拉。"}
+      ]
+    },
+    "g6_v2_u6": {
+      "words": [
+        {"en": "beach", "cn": "海滩"},
+        {"en": "sea", "cn": "大海"},
+        {"en": "travel", "cn": "旅行"},
+        {"en": "relax", "cn": "放松"},
+        {"en": "enjoy", "cn": "享受"},
+        {"en": "holiday", "cn": "假期"}
+      ],
+      "sentences": [
+        {"en": "What are you going to do this summer holiday?", "cn": "这个暑假你打算做什么？"},
+        {"en": "I'm going to the beach.", "cn": "我打算去海滩。"},
+        {"en": "It will be fun!", "cn": "那会很有趣！"}
+      ],
+      "dialogues": [
+        {"speaker": "A", "en": "Where will you go?", "cn": "你将去哪里？"},
+        {"speaker": "B", "en": "I'll visit my grandparents.", "cn": "我将去看望我的祖父母。"}
+      ]
+    }
+  },
+  "responsive_sizes": {
+    "desktop_large": {"width": 1920, "height": 1080},
+    "desktop_standard": {"width": 1366, "height": 768},
+    "tablet": {"width": 768, "height": 1024},
+    "mobile_standard": {"width": 375, "height": 667},
+    "mobile_small": {"width": 320, "height": 568}
+  }
+}
