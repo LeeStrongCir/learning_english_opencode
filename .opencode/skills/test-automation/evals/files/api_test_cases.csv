@@ -1,0 +1,4 @@
+用例ID,用例标题,前置条件,测试步骤,预期结果,优先级,测试类型
+TC-API-001,用户登录接口-正常登录,用户已注册且账号状态正常,1. 发送 POST 请求到 /api/auth/login，body 包含 username 和 password,返回状态码 200，响应体包含 token 字段且不为空,P0,API
+TC-API-002,用户登录接口-密码错误,用户已注册,1. 发送 POST 请求到 /api/auth/login，body 包含正确 username 和错误 password,返回状态码 401，响应体包含 error 字段,P1,API
+TC-API-003,获取用户列表-分页查询,已获取有效 token,1. 发送 GET 请求到 /api/users?page=1&size=10，header 包含 Authorization,返回状态码 200，响应体包含 users 数组且长度不超过 10,P1,API

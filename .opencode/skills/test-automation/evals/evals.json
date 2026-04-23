@@ -1,0 +1,50 @@
+{
+  "skill_name": "test-automation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我有一个 API 测试用例 CSV 文件，帮我生成可执行的 pytest 测试代码。文件路径是 evals/files/api_test_cases.csv，API base URL 是 https://api.example.com",
+      "expected_output": "生成包含 conftest.py、test_api_cases.py、requirements.txt 和 README.md 的测试项目，其中 test_api_cases.py 包含 3 条 API 测试用例的 pytest 代码",
+      "files": ["evals/files/api_test_cases.csv"],
+      "expectations": [
+        "输出了 conftest.py 文件，包含 API session fixture",
+        "输出了 test_api_cases.py 文件",
+        "test_api_cases.py 中包含 3 个测试类，分别对应 TC-API-001、TC-API-002、TC-API-003",
+        "每个测试类包含 setup_method 方法",
+        "测试代码使用 requests 库进行 HTTP 请求",
+        "测试代码包含断言语句检查状态码",
+        "输出了 requirements.txt 文件，包含 pytest 和 requests 依赖"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "帮我把这个 Web UI 测试用例表格转成自动化测试代码：evals/files/webui_test_cases.csv，应用地址是 https://app.example.com",
+      "expected_output": "生成包含 conftest.py、test_webui_cases.py、requirements.txt 和 README.md 的测试项目，其中 test_webui_cases.py 包含 3 条 Web UI 测试用例的 Playwright 代码",
+      "files": ["evals/files/webui_test_cases.csv"],
+      "expectations": [
+        "输出了 conftest.py 文件，包含 Playwright browser/page fixtures",
+        "输出了 test_webui_cases.py 文件",
+        "test_webui_cases.py 中包含 3 个测试类，分别对应 TC-UI-001、TC-UI-002、TC-UI-003",
+        "测试代码使用 playwright.sync_api 的 Page 对象",
+        "测试代码包含 page.click、page.fill 等 UI 操作方法",
+        "测试代码使用 expect() 进行断言验证",
+        "输出了 requirements.txt 文件，包含 playwright 和 pytest-playwright 依赖"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我有一些混合类型的测试用例需要自动化，既有 API 调用也有页面操作。文件在 evals/files/mixed_test_cases.csv，API 地址 https://api.example.com，应用地址 https://app.example.com",
+      "expected_output": "生成包含 conftest.py、test_mixed_cases.py、requirements.txt 和 README.md 的测试项目，其中 test_mixed_cases.py 包含 2 条混合型测试用例的代码，同时使用 requests 和 playwright",
+      "files": ["evals/files/mixed_test_cases.csv"],
+      "expectations": [
+        "输出了 conftest.py 文件，同时包含 API session 和 Playwright page fixtures",
+        "输出了 test_mixed_cases.py 文件",
+        "test_mixed_cases.py 中包含 2 个测试类，分别对应 TC-MIX-001、TC-MIX-002",
+        "测试代码同时使用了 requests 和 playwright",
+        "测试代码的 setup_method 同时接收 api_session 和 page 参数",
+        "测试代码包含 API 请求和 UI 操作的组合步骤",
+        "输出了 requirements.txt 文件，同时包含 requests 和 playwright 依赖"
+      ]
+    }
+  ]
+}

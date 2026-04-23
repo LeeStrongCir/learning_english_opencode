@@ -1,16 +1,16 @@
 ---
 name: test-case-generator
 description: >
-  Generates comprehensive test cases from requirement documents. Use this skill whenever the user provides a requirement document (PRD, spec, user story, feature description) and wants to create test cases, test scenarios, or a test plan. Make sure to use this skill when the user mentions "test case", "test scenario", "test design", "test coverage", "QA plan", "testing strategy", or wants to analyze requirements for testing purposes. Also trigger when the user asks to identify edge cases, boundary conditions, or exception scenarios from a requirement. Outputs structured test cases in Excel/CSV format with multiple sheets for different test types.
+  从需求文档生成全面的测试用例，并输出为 CSV 文件。当用户提供需求文档（PRD、规格说明、用户故事、功能描述）并想要创建测试用例、测试场景或测试计划时使用此 skill。确保在用户提到"测试用例"、"测试场景"、"测试设计"、"测试覆盖"、"QA 计划"、"测试策略"或想要分析需求以进行测试时使用此 skill。当用户要求识别边缘情况、边界条件或异常场景时也要触发。输出按测试类型分文件的结构化 CSV 格式测试用例。
 ---
 
-# Test Case Generator
+# 测试用例生成器
 
-This skill helps you generate comprehensive test cases from requirement documents, outputting them as structured Excel files with multiple sheets.
+本 skill 帮助你从需求文档生成全面的测试用例，输出为按测试类型分类的结构化 CSV 文件。
 
-## Workflow
+## 工作流程
 
-### Step 1: 分析需求文档
+### 第一步：分析需求文档
 
 读取用户提供的需求文档，提取：
 - **功能需求**：系统应该做什么
@@ -22,7 +22,7 @@ This skill helps you generate comprehensive test cases from requirement document
 
 如果文档不清晰或缺少关键信息，在继续之前询问澄清问题。
 
-### Step 2: 设计测试场景
+### 第二步：设计测试场景
 
 基于分析结果，应用以下测试设计方法（选择所有适用的）：
 
@@ -36,7 +36,7 @@ This skill helps you generate comprehensive test cases from requirement document
 
 按功能模块或用户旅程组织场景。
 
-### Step 3: 生成详细测试用例
+### 第三步：生成详细测试用例
 
 为每个场景生成测试用例，包含以下字段：
 
@@ -51,45 +51,44 @@ This skill helps you generate comprehensive test cases from requirement document
 | 优先级 | P0(关键), P1(高), P2(中), P3(低) |
 | 测试类型 | 功能/UI/API/边界/异常/性能/安全 |
 | 实际结果 | 空 - 供测试执行时填写 |
-| 状态 | 默认："Not Run" |
+| 状态 | 默认："未执行" |
 | 测试数据 | 具体使用的输入值 |
+| 备注 | 补充说明 |
 
-### Step 4: 生成 Excel 文件
+### 第四步：生成 CSV 文件
 
-使用内置脚本生成 Excel 文件：
+使用内置脚本生成 CSV 文件：
 
 ```bash
 python scripts/generate_test_cases.py \
   --test-cases <test-cases-json> \
-  --template assets/test_case_template.xlsx \
-  --output <output-path.xlsx>
+  --output <output-directory>
 ```
 
 脚本将：
-- 创建按测试类型或模块组织的多 Sheet
-- 应用一致的格式化和样式
+- 按测试类型生成多个 CSV 文件
 - 自动生成用例 ID
-- 包含统计摘要页
+- 生成一个汇总统计文件
 
-### Step 5: 交付给用户
+### 第五步：交付给用户
 
-提供生成的 Excel 文件和简要摘要，包括：
+提供生成的 CSV 文件和简要摘要，包括：
 - 测试用例总数
 - 按优先级分布 (P0/P1/P2/P3)
 - 按测试类型分布
 - 覆盖说明（已覆盖什么，可能需要手动补充什么）
 
-## Excel 输出结构
+## CSV 输出结构
 
-Excel 文件包含以下 Sheet：
+输出目录包含以下文件：
 
-1. **Summary**：统计概览
-2. **功能测试**：核心功能测试用例
-3. **边界测试**：边界值测试用例
-4. **异常测试**：错误处理和边缘场景
-5. **用户旅程**：端到端工作流测试
-6. **API测试**：接口级测试（如适用）
-7. **测试数据**：测试执行参考数据
+1. **summary.csv**：统计概览
+2. **functional_tests.csv**：核心功能测试用例
+3. **boundary_tests.csv**：边界值测试用例
+4. **exception_tests.csv**：错误处理和边缘场景
+5. **user_journey_tests.csv**：端到端工作流测试
+6. **api_tests.csv**：接口级测试（如适用）
+7. **test_data.csv**：测试执行参考数据
 
 ## 质量准则
 

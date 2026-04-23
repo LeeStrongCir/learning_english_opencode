@@ -1,0 +1,5 @@
+﻿用例ID,测试场景/模块,用例标题,前置条件,测试步骤,预期结果,优先级,测试类型,实际结果,状态,测试数据,备注
+TC-API-001,用户查询接口,GET /api/users 返回用户列表,有效的认证 Token,"1. 发送 GET 请求到 /api/users
+2. 携带 Authorization header",返回 200，响应体包含用户列表,P0,API,,Not Run,Token: Bearer eyJ...,
+TC-API-002,用户查询接口,GET /api/users 无 Token 时拒绝访问,无,"1. 发送 GET 请求到 /api/users
+2. 不携带 Authorization header",返回 401 Unauthorized,P1,API,,Not Run,无,权限验证
