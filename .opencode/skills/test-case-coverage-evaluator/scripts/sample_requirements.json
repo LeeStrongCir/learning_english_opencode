@@ -1,0 +1,10 @@
+{
+  "requirements": [
+    {"id": "REQ-001", "description": "用户可以使用邮箱和密码注册账号", "module": "用户注册"},
+    {"id": "REQ-002", "description": "用户可以使用账号登录系统", "module": "用户登录"},
+    {"id": "REQ-003", "description": "用户可以浏览商品列表", "module": "商品浏览"},
+    {"id": "REQ-004", "description": "用户可以将商品加入购物车", "module": "购物车"},
+    {"id": "REQ-005", "description": "用户可以提交订单并完成支付", "module": "订单支付"},
+    {"id": "REQ-006", "description": "用户可以查看订单状态", "module": "订单管理"}
+  ]
+}
